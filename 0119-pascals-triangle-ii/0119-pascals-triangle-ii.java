@@ -1,12 +1,12 @@
 class Solution {
     public List<Integer> getRow(int rowIndex) {
-        List<List<Integer>> list = new ArrayList<List<Integer>>();
         if(rowIndex == 0){
             return (new ArrayList<Integer>(Arrays.asList(1)));
         }
         else if(rowIndex == 1){
             return (new ArrayList<Integer>(Arrays.asList(1,1)));
         } else{
+            List<List<Integer>> list = new ArrayList<List<Integer>>();
             
             list.add(new ArrayList<Integer>(Arrays.asList(1)));
             list.add(new ArrayList<Integer>(Arrays.asList(1,1)));
@@ -28,6 +28,6 @@ class Solution {
             }
         }
         
-        return (list.get(rowIndex));
+        return (new ArrayList<Integer>(Arrays.asList(0)));
     }
 }
