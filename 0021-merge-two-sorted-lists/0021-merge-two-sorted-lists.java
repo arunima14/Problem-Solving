@@ -12,28 +12,32 @@ class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         if(list1 == null) return list2;
         if(list2 == null) return list1;
-        if(list1.val > list2.val) {
-            //List2 pointer will always be greater then list1
-            //If this situation reverse then we swap this pointers with the nodes. 
-            ListNode temp = list1;
-            list1 = list2;
-            list2 = temp;
-        }
-        ListNode res = list1;
-        while(list1 != null && list2 != null) {
-            ListNode temp = null;
-            while(list1 != null && list1.val <= list2.val) {
-                temp = list1;
+        
+        ListNode temp = new ListNode(0);
+        ListNode curr = temp;
+        
+        while(list1 != null && list2 != null){
+            if(list1.val > list2.val){
+                curr.next = list2;
+                list2 = list2.next;
+            }else{
+                curr.next = list1;
                 list1 = list1.next;
             }
-            temp.next = list2;
-
-            //Swap the list1 and list2
-            temp = list1;
-            list1 = list2;
-            list2 = temp;
+            
+            curr = curr.next;
         }
-
-        return res;
+        
+        if(list1 != null){
+            curr.next = list1;
+            list1 = list1.next;
+        }
+        
+        if(list2 != null){
+            curr.next = list2;
+            list2 = list2.next;
+        }
+        
+        return temp.next;
     }
 }
