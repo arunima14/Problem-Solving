@@ -3,10 +3,18 @@ class Solution {
         if(num == 0)
             return num;
         
-        else if(num%9 == 0)
-            return 9;
+        int sum = 0;
+        while(num>0){
+            int digit = num%10;
+            sum += digit;
+            num = num/10;
+            
+            if(num == 0 && sum>9){
+                num = sum;
+                sum = 0;
+            }
+        }
         
-        else
-            return num%9;
+        return sum;
     }
 }
