@@ -4,10 +4,12 @@ class Solution {
         
         if(numRows == 1){
             list.add(new ArrayList<Integer>(Arrays.asList(1)));
-        }else if(numRows == 2){
+        }
+        else if(numRows == 2){
             list.add(new ArrayList<Integer>(Arrays.asList(1)));
             list.add(new ArrayList<Integer>(Arrays.asList(1,1)));
-        }else{
+        }
+        else{
             list.add(new ArrayList<Integer>(Arrays.asList(1)));
             list.add(new ArrayList<Integer>(Arrays.asList(1,1)));
             
