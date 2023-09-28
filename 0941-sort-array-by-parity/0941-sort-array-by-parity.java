@@ -8,8 +8,7 @@ class Solution {
                arr[idx++] = nums[i]; 
             }
         }
-
-        // idx = arr.length;
+        
         for(int i=0; i<nums.length; i++){
             if(nums[i]%2 != 0){
                arr[idx++] = nums[i]; 
