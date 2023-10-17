@@ -2,7 +2,8 @@ class Solution {
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> result = new ArrayList<>();
         
-        for (int i = 0, wordCount, lineLength; i < words.length; i += wordCount) {
+        int wordCount = 0, lineLength = 0;
+        for (int i = 0; i < words.length; i += wordCount) {
             for (wordCount = 0, lineLength = 0; 
                  i + wordCount < words.length && 
                  lineLength + words[i + wordCount].length() + wordCount <= maxWidth; 
